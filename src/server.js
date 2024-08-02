@@ -6,7 +6,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/biblioteca');
+mongoose.connect(`mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
